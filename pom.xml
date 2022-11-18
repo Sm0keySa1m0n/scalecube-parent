@@ -63,9 +63,6 @@
     <checkstyle.config.location>google_checks.xml</checkstyle.config.location>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-    <distributionManagement.url>https://maven.pkg.github.com/Sm0keySa1m0n/${project.artifactId}
-    </distributionManagement.url>
   </properties>
 
   <reporting>
@@ -278,12 +275,17 @@
 
   <profiles>
     <profile>
-      <id>deploy2Github</id>
+      <id>deploy2Sa1m0ns</id>
       <distributionManagement>
+        <snapshotRepository>
+          <id>sm0keysa1m0n-snapshots</id>
+          <name>Sa1m0n's Repository</name>
+          <url>https://maven.tarbits.co.uk/snapshots</url>
+        </snapshotRepository>
         <repository>
-          <id>github</id>
-          <name>GitHub Packages</name>
-          <url>${distributionManagement.url}</url>
+          <id>sm0keysa1m0n-releases</id>
+          <name>Sa1m0n's Repository</name>
+          <url>https://maven.tarbits.co.uk/releases</url>
         </repository>
       </distributionManagement>
     </profile>
